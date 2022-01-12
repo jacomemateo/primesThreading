@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/mateo/Coding/Projects/Prime/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -std=c++14 -lpthread -g -o CMakeFiles/primeT.o.dir/src/primeT.cpp.o -c /home/mateo/Coding/Projects/Prime/src/primeT.cpp",
+  "file": "/home/mateo/Coding/Projects/Prime/src/primeT.cpp"
+},
+{
+  "directory": "/home/mateo/Coding/Projects/Prime/build",
+  "command": "/bin/x86_64-linux-gnu-g++-11 -std=c++14 -lpthread -g -o CMakeFiles/primeN.o.dir/src/primeN.cpp.o -c /home/mateo/Coding/Projects/Prime/src/primeN.cpp",
+  "file": "/home/mateo/Coding/Projects/Prime/src/primeN.cpp"
+}
+]
