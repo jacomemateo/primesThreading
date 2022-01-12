@@ -1,4 +1,0 @@
-/home/mateo/Coding/Projects/Prime/build/CMakeFiles/edit_cache.dir
-/home/mateo/Coding/Projects/Prime/build/CMakeFiles/primeT.o.dir
-/home/mateo/Coding/Projects/Prime/build/CMakeFiles/rebuild_cache.dir
-/home/mateo/Coding/Projects/Prime/build/CMakeFiles/primeN.o.dir
