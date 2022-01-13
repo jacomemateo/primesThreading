@@ -14,9 +14,9 @@ int findPrime(int min, int max) {  // Prime Finding Function
         num = i;
         count = 0;  
         for(int x = 1; x <= num; x++) {
-        if(num%x == 0) {
-            count++;
-        }
+            if(num%x == 0) {
+                count++;
+            }
         }
         if(count == 2) {  
             c++;
