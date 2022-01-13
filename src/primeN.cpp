@@ -40,6 +40,10 @@ bool singleTest(int n, int a) {
 
 
 int main() {
+    if (sodium_init() < 0) {
+        /* panic! the library couldn't be initialized, it is not safe to use */
+    }
+    
     int die = randombytes_uniform(100);
     cout << die;
 
