@@ -12,7 +12,7 @@ int findPrime(int min, int max) {
             count++;
         }
         }
-        if(count == 2) {  
+        if(count == 2) {
             c++;
         }  
     }
