@@ -51,7 +51,6 @@ int primeFinder(int max) {
 
     for(int i=2; i<=max; i++) {
         bool value = miller_rabin(i);
-        cout << i << ": " << value << std::endl;
         if(value) {
             count++;
         }
@@ -67,7 +66,6 @@ int main(int argc, char *argv[]){
     }
     const int max = atoi(argv[1]);
 
-    // cout << miller_rabin(max) << std::endl;
     cout << primeFinder(max) << std::endl;
 
     return 0;
