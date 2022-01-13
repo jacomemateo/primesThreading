@@ -20,8 +20,11 @@ int findPrime(int min, int max) {
     return c;
 }
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]){
+    if(argc < 2) {
+        cout << "You must supply a value\n";
+    }
+
     const int max = atoi(argv[1]);
     int count = findPrime(2, max);
 

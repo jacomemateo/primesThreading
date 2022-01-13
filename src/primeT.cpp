@@ -28,6 +28,10 @@ int findPrime(int min, int max) {  // Prime Finding Function
 
 
 int main(int argc, char *argv[]) {
+    if(argc < 2) {
+        cout << "You must supply a value\n";
+    }
+
     int primes = 0;
 
     const auto processor_count = std::thread::hardware_concurrency();
