@@ -5,13 +5,6 @@ set(CMAKE_CXX_FLAGS "-std=c++14")
 
 project(primesThreading)
 
-ADD_LIBRARY(LibsModule 
-    src/primeN.cpp
-    src/primeT.cpp
-)
-
-target_link_libraries(LibsModule -lpthread -lsodium)
-
 add_executable(
     primeN.o
     src/primeN.cpp
@@ -21,3 +14,5 @@ add_executable(
    primeT.o
    src/primeT.cpp
 )
+
+target_link_libraries(primeN.o sodium pthread)
