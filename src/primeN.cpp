@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
 #include <sodium.h>
-
 using std::cout;
 
  int modulo(int a, int b, int n){
@@ -21,7 +20,7 @@ bool singleTest(int n, int a) {
     int exp = n - 1;
     
     while(!(exp & 1)) {
-        exp >> 1;
+        exp >>= 1;
     }
 
     if (modulo(a, exp, n) == 1 ) {
@@ -31,21 +30,25 @@ bool singleTest(int n, int a) {
         if (modulo(a, exp, n) == n -1) {
             return true;
         }
-        exp << 1;
+        exp <<= 1;
     }
     return false;
 }
 
-
+bool miller_rabin(int n, int k = 40) {
+    int a = 0;
+    for(int i = 0; i<k; i++) {
+        a = randombytes_uniform(n-1)+2;
+        if(!(singleTest(n, a))) {
+            return false;
+        }
+    }
+    return true;
+}
 
 
 int main() {
-    if (sodium_init() < 0) {
-        /* panic! the library couldn't be initialized, it is not safe to use */
-    }
-    
-    int die = randombytes_uniform(100);
-    cout << die;
+    cout << miller_rabin(96) << std::endl;
 
     return 0;
 }
