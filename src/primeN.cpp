@@ -99,5 +99,12 @@ int main(int argc, char *argv[]) {
     }
     const int n = atoi(argv[1]);
 
+<<<<<<< Updated upstream
     cout << findPrime(n, 80) << std::endl;
-}
+=======
+    const int max = atoi(argv[1]);
+    int count = findPrime(2, max);
+
+    cout << count << "\n";
+    return 0;
+>>>>>>> Stashed changes
