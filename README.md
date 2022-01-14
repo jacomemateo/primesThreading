@@ -1,4 +1,6 @@
 # Threaded Prime Compairason
+<h2><mark> (The millerRabin branch is much faster)</mark><h2>
+
 The code just counts the number of prime numbers up to n.
 ### Dependencies
 1) gcc (or any other c++ compiler)
