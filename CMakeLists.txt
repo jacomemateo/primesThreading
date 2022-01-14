@@ -15,5 +15,5 @@ add_executable(
    src/primeT.cpp
 )
 
-target_link_libraries(primeN.o sodium pthread)
+target_link_libraries(primeN.o sodium)
 target_link_libraries(primeT.o sodium pthread)
