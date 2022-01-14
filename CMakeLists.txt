@@ -16,3 +16,4 @@ add_executable(
 )
 
 target_link_libraries(primeN.o sodium pthread)
+target_link_libraries(primeT.o sodium pthread)

@@ -35,7 +35,7 @@ bool singleTest(int n, int a) {
     return false;
 }
 
-bool miller_rabin(int n, int k = 4) {
+bool miller_rabin(int n, int k = 2) {
     int a = 0;
     for(int i = 0; i<k; i++) {
         a = randombytes_uniform(n-1)+2;
@@ -64,9 +64,10 @@ int main(int argc, char *argv[]){
     if(argc < 2) {
         cout << "You must supply a value\n";
     }
-    const int max = atoi(argv[1]);
+    const int MAX = atoi(argv[1]);
 
-    cout << primeFinder(max) << std::endl;
+    // cout << miller_rabin(max) << std::endl;
+    cout << primeFinder(MAX) << std::endl;
 
     return 0;
 }
