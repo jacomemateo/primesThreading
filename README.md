@@ -1,5 +1,6 @@
-# Threaded Prime Compairason
 <h2><mark> (The millerRabin branch is much faster)</mark><h2>
+
+# Threaded Prime Compairason
 
 The code just counts the number of prime numbers up to n.
 ### Dependencies
