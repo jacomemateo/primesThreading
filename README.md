@@ -1,6 +1,6 @@
 # Threaded Prime Compairason
 
-The code just counts the number of prime numbers up to n.
+The code just counts the number of prime numbers up to n using an implementation of the Miller Rabin algorithm.
 ### Dependencies
 1) gcc (or any other c++ compiler)
 
@@ -8,7 +8,9 @@ The code just counts the number of prime numbers up to n.
 
 3) make
 
-`sudo apt install make cmake build-essential -y`
+4) [sodium libary](https://github.com/jedisct1/libsodium)
+
+`sudo apt install make cmake build-essential libsodium-dev -y`
 ### Compiling
 ```
 $ mkdir build
