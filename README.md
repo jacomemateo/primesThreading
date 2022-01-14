@@ -1,5 +1,6 @@
+<h2 style="background-color : yellow; color: black">(The millerRabin branch is much faster)<h2>
+
 # Threaded Prime Compairason
-<h2><mark> (The millerRabin branch is much faster)</mark><h2>
 
 The code just counts the number of prime numbers up to n.
 ### Dependencies
