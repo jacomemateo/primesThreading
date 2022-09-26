@@ -1,18 +1,13 @@
 cmake_minimum_required(VERSION 3.00)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_FLAGS "-std=c++11")
 
-project(primesThreading)
+project(primes)
 
-add_executable(
-    primeN.o
-    src/primeN.cpp
+add_executable( prime_normal
+    src/prime_normal.cc
 )
 
-add_executable(
-   primeT.o
-   src/primeT.cpp
+add_executable( prime_miller
+   src/prime_miller.cc
 )
-
-target_link_libraries(primeT.o pthread)

@@ -1,5 +1,4 @@
 #include <iostream>
-using std::cout;
 
 int findPrime(int min, int max) {
     int count, num, c = 0;
@@ -20,14 +19,10 @@ int findPrime(int min, int max) {
     return c;
 }
 
-int main(int argc, char *argv[]){
-    if(argc < 2) {
-        cout << "You must supply a value\n";
-    }
-
-    const int max = atoi(argv[1]);
+int main() {
+    int max = 100;
     int count = findPrime(2, max);
 
-    cout << count << "\n";
+    std::cout << count << "\n";
     return 0;
 }

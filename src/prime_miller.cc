@@ -1,11 +1,7 @@
 #include <iostream>
 #include <thread>
 #include <future>
-#include <sodium.h>
-using std::thread;
-using std::cout;
-using std::async;
-using std::future;
+#include <random>
 
  int modulo(int a, int b, int n){
     long long x=1, y=a; 
@@ -42,7 +38,10 @@ bool singleTest(int n, int a) {
 bool miller_rabin(int n, int k = 2) {
     int a = 0;
     for(int i = 0; i<k; i++) {
-        a = randombytes_uniform(n-1)+2;
+        std::random_device dev;
+        std::mt19937 rng(dev());
+        std::uniform_int_distribution<std::mt19937::result_type> dist6(0, n-1);
+        a = dist6(rng) + 2;
         if(!(singleTest(n, a))) {
             return false;
         }
@@ -64,43 +63,10 @@ int primeFinder(int min, int max) {
 }
 
 
-int main(int argc, char *argv[]) {
-    if(argc < 2) {
-        cout << "You must supply a value\n";
-    }
-    const int MAX = atoi(argv[1]);
+int main() {
+    const int MAX = 100;
 
-    int primes = 0;
-
-    const auto processor_count = std::thread::hardware_concurrency();
-    const int MINIMUM_VALUE = processor_count*2;
-    const int MIN = 2;
-    if((MAX-MIN)<MINIMUM_VALUE) { // Checks if the range you specified is greater than the min value you can calculate using your cores
-        primes = primeFinder(MIN, MAX);
-    }
-    else {
-        int arr[processor_count][2] = {{}};
-
-        int intervals = MAX/processor_count;
-        arr[0][0] = MIN;
-        arr[0][1] = intervals;
-
-        for(int i=1; i<=processor_count-1; i++) { // Creates a list of intervals to calculate
-            arr[i][0] = arr[i-1][1] + 1;
-            arr[i][1] = arr[i-1][1] + intervals;
-        }
-        arr[processor_count-1][1] = MAX;
-
-        future<int> values[processor_count] = {};
-        for(int i=0; i<processor_count; i++) { // Calls the findPrime function and calculates
-            values[i] = async(primeFinder, arr[i][0], arr[i][1]);
-        }
-        for(int i=0; i<processor_count; i++) { // Adds up results, this needed to be in a separate loop or else the performace would be the same as primeN.cpp
-            primes+=values[i].get();
-        }
-
-    }
-
-    cout << primes << std::endl;
+    int primes = primeFinder(2, MAX);
+    std::cout << primes << std::endl;
     return 0;
 }

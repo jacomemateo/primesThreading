@@ -44,7 +44,7 @@ fn miller_rabin(n: i128, k: i128) -> bool {
     return true;
 }
 
-pub fn find_prime(min: i128, max: i128) -> i128 {
+fn find_prime(min: i128, max: i128) -> i128 {
     let mut count: i128= 0;
 
     for i in min..=max {
@@ -56,3 +56,4 @@ pub fn find_prime(min: i128, max: i128) -> i128 {
 
     return count;
 }
+
